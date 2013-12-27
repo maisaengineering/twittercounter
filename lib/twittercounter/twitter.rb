@@ -9,7 +9,7 @@ module Twittercounter
     end
 
     def self.user(username)
-      response = Request.get("http://api.twitter.com/users/show.json", :query => {:screen_name => username})
+      response = Request.get("http://api.twitter.com/1.1/users/show.json", :query => {:screen_name => username})
       if response.code == 200
         Twitter.new(response)
       else
